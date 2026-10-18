@@ -5,6 +5,7 @@ class SVGImage extends SVGObject {
         this.shapeElement.setAttribute('href', src);
         this.shapeElement.setAttribute('x', x);
         this.shapeElement.setAttribute('y', y);
+        this.shapeElement.setAttribute('preserveAspectRatio', 'none');
         this.loadImage(src);
         this.groupElement.appendChild(this.shapeElement);
     }
