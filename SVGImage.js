@@ -1,10 +1,12 @@
 class SVGImage extends SVGObject {
-    constructor(svgElement, src, x = 0, y = 0) {
+    constructor(svgElement, src, x = 0, y = 0, width = 50, height = 50) {
         super(svgElement, x, y);
         this.shapeElement = document.createElementNS("http://www.w3.org/2000/svg", "image");
         this.shapeElement.setAttribute('href', src);
         this.shapeElement.setAttribute('x', x);
         this.shapeElement.setAttribute('y', y);
+        this.shapeElement.setAttribute('width', width);
+        this.shapeElement.setAttribute('height', height);
         this.shapeElement.setAttribute('preserveAspectRatio', 'none');
         this.loadImage(src);
         this.groupElement.appendChild(this.shapeElement);
