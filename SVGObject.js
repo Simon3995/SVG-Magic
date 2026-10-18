@@ -1,29 +1,26 @@
 class SVGObject {
     constructor(svgElement) {
         this.svgElement = svgElement;
-        this.shapeElement = null;
+        this.groupElement = document.createElementNS("http://www.w3.org/2000/svg", "g");
+        this.svgElement.appendChild(this.groupElement);
         this.transform = { translate: { x:0, y:0 }, rotate: 0 };
     }
 
     move(x, y) {
-        if (this.shapeElement) {
-            this.transform.translate.x += x;
-            this.transform.translate.y += y;
-            this.applyTransform();
-        }
+        this.transform.translate.x += x;
+        this.transform.translate.y += y;
+        this.applyTransform();
     }
 
     rotate(angle) {
-        if (this.shapeElement) {
-            this.transform.rotate += angle;
-            this.transform.rotate %= 360;
-            this.applyTransform();
-        }
+        this.transform.rotate += angle;
+        this.transform.rotate %= 360;
+        this.applyTransform();
     }
 
     delete() {
-        if (this.shapeElement && this.shapeElement.parentNode) {
-            this.shapeElement.parentNode.removeChild(this.shapeElement);
+        if (this.groupElement && this.groupElement.parentNode) {
+            this.groupElement.parentNode.removeChild(this.groupElement);
         }
     }
 
@@ -31,6 +28,6 @@ class SVGObject {
         const { x, y } = this.transform.translate;
         const angle = this.transform.rotate;
         const transformAttr = `translate(${x}, ${y}) rotate(${angle})`;
-        this.shapeElement.setAttribute('transform', transformAttr);
+        this.groupElement.setAttribute('transform', transformAttr);
     }
 }

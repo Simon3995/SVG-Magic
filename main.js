@@ -1,2 +1,7 @@
-const canvas = document.getElementById("canvas");
-const testRect = new SVGRect(canvas, 0, 0, 10, 10);
+document.addEventListener("DOMContentLoaded", () => {
+    const svgCanvas = document.getElementById("canvas");
+    const parentNode = new SVGObject(svgCanvas);
+    const rect = new SVGRect(parentNode.groupElement, 0, 0, 20, 20);
+    parentNode.rotate(20);
+    rect.rotate(-20);
+});
