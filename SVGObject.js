@@ -1,9 +1,10 @@
 class SVGObject {
     constructor(svgElement, x = 0, y = 0) {
         this.svgElement = svgElement?.groupElement || svgElement;
+        this.transform = { translate: { x:x, y:y }, rotate: 0 };
         this.groupElement = document.createElementNS("http://www.w3.org/2000/svg", "g");
         this.svgElement.appendChild(this.groupElement);
-        this.transform = { translate: { x:x, y:y }, rotate: 0 };
+        this.applyTransform();
     }
 
     move(x, y) {
