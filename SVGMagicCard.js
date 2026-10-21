@@ -2,7 +2,10 @@ class SVGMagicCard extends SVGObject {
     constructor(svgElement, x = 0, y = 0) {
         super(svgElement, x, y);
 
-        this.background = new SVGRect(this, -30, -50, 60, 100);
-        this.image = new SVGImage(this, "./assets/test.jpg", -25, -45, 50, 35);
+        // this.background = new SVGImage(this, "./assets/jace_beleren.jpg", -31.5, -44, 63, 88);
+
+        this.cardBack = new SVGRect(this, -31.5, -44, 63, 88);
+        // this.cardBack.setColor("#ff000040");
+        this.cardBack.setCornerRadius(3);
     }
 }

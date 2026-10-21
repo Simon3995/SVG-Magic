@@ -12,4 +12,9 @@ class SVGRect extends SVGObject {
     setColor(color) {
         this.shapeElement.setAttribute('fill', color);
     }
+
+    setCornerRadius(radius) {
+        this.shapeElement.setAttribute('rx', radius);
+        this.shapeElement.setAttribute('ry', radius);
+    }
 }
