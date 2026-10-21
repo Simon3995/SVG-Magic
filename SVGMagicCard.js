@@ -11,5 +11,9 @@ class SVGMagicCard extends SVGObject {
         this.cardBack.setCornerRadius(3);
 
         this.title = new SVGText(this, "Jace Beleren", -26, -37, 3.5, 50);
+
+        this.descriptionRect = new SVGRect(this, -26, 0, 52, 40);
+        this.descriptionRect.setColor("#ff000040");
+        this.description = new SVGTextBox(this, "This is some text to test the SVGTextBox class and I'm gonna write a couple more words to see if the line breaking is working correctly", -26, 0, 52, 40, 3);
     }
 }
