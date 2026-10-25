@@ -12,3 +12,12 @@ html, body {
     left: 0;
     z-index: -1;
 }
+
+tspan {
+    font-family: MagicEmoji, serif;
+}
+
+@font-face {
+    font-family: MagicEmoji;
+    src: url(./assets/fonts/MyColorFont.ttf);
+}
