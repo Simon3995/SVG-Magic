@@ -6,6 +6,8 @@ class SVGMagicCreatureCard extends SVGMagicCard {
         // this.background = new SVGImage(this, "./assets/dina_soul_steeper.jpg", -315, -440, 630, 880);
         // this.background.setOpacity(0.4);
 
+        // TODO: check whether SVGDiv is compatible with all browsers
+
         // card background
         this.cardBack = new SVGRect(this, -315, -440, 630, 880);
         this.cardBack.setColor("#00ff0040");
@@ -20,7 +22,9 @@ class SVGMagicCreatureCard extends SVGMagicCard {
         `, -275, -392, 550, 100);
 
         // type
-        this.type = new SVGText(this, "Legendary Creature – Dryad Druid", -260, 90, 26, 500);
+        this.type = new SVGDiv(this, `
+            <div class="type">Legendary Creature – Dryad Druid</div>
+        `, -260, 62, 520, 100);
 
         // description
         let box = [-260, 120, 520, 280];

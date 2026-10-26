@@ -39,6 +39,11 @@
     text-align: right;
 }
 
+.type {
+    font-weight: bold;
+    font-size: 25px;
+}
+
 @font-face {
     font-family: MagicEmoji;
     src: url(./assets/fonts/MagicEmoji.ttf);
