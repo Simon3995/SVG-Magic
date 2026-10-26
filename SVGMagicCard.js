@@ -19,9 +19,16 @@ class SVGMagicCard extends SVGObject {
         this.type = new SVGText(this, "Legendary Creature – Dryad Druid", -26, 9, 2.6, 50);
 
         // description
-        let box = [-26, 13, 52, 25];
-        this.descriptionRect = new SVGRect(this, ...box);
-        this.descriptionRect.setColor("#ff000040");  // rect for debug
-        this.description = new SVGTextBox(this, `Whenever you gain life, each opponent loses 1 life. ${sym('1')}, Sacrifice another creature: Dina, Soul Steeper gets +X/+0 until end of turn, where X is the sacrificed creature's power.\n\n_Her concoctions corroded metal and fortified organic tissue. They would be studied for generations._`, ...box, 2.4);
+        let box = [-26, 12, 52, 28];
+        // this.descriptionRect = new SVGRect(this, ...box);
+        // this.descriptionRect.setColor("#ff000040"); // rect for debug
+        this.description = new SVGDiv(this, `
+            <p>Whenever you gain life, each opponent loses 1 life.</p>
+            <p>${sym('1')}, Sacrifice another creature: Dina, Soul Steeper gets +X/+0 until end of turn, where X is the sacrificed creature's power.</p>
+            <p class="flavor">Her concoctions corroded metal and fortified organic tissue. They would be studied for generations.</p>
+        `, ...box);
+
+        // power/toughness
+        this.stats = new SVGText(this, "1/3", 21, 38, 3.2);
     }
 }

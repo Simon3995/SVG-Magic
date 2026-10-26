@@ -10,6 +10,8 @@ class SVGTextBox extends SVGObject {
         this.textElement.setAttribute('font-size', fontSize);
         this.groupElement.appendChild(this.textElement);
 
+        this.numLines = 0;
+
         this._render(text);
     }
 
@@ -50,6 +52,8 @@ class SVGTextBox extends SVGObject {
             tspan.textContent = line;
             this.textElement.appendChild(tspan);
         });
+
+        this.numLines = lines.length;
     }
 
     setColor(color) {

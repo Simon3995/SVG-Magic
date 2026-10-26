@@ -1,4 +1,4 @@
-html, body {
+* {
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -13,8 +13,19 @@ html, body {
     z-index: -1;
 }
 
-tspan {
+.carddesc {
+    font-size: 2.4px;
     font-family: MagicEmoji, serif;
+    line-height: 2.5px;
+}
+
+.carddesc p {
+    margin-bottom: 1.6px;
+}
+
+.flavor {
+    color: #555;
+    font-style: italic;
 }
 
 @font-face {
