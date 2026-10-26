@@ -13,8 +13,20 @@ class SVGObject {
         this.applyTransform();
     }
 
+    setPosition(x, y) {
+        this.transform.translate.x = x;
+        this.transform.translate.y = y;
+        this.applyTransform();
+    }
+
     rotate(angle) {
         this.transform.rotate += angle;
+        this.transform.rotate %= 360;
+        this.applyTransform();
+    }
+
+    setRotation(angle) {
+        this.transform.rotate = angle;
         this.transform.rotate %= 360;
         this.applyTransform();
     }
