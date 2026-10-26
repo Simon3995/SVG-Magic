@@ -5,30 +5,39 @@ class SVGMagicCard extends SVGObject {
         super(svgElement, x, y);
 
         // reference image
-        // this.background = new SVGImage(this, "./assets/dina_soul_steeper.jpg", -31.5, -44, 63, 88);
+        // this.background = new SVGImage(this, "./assets/dina_soul_steeper.jpg", -315, -440, 630, 880);
+        // this.background.setOpacity(0.4);
 
         // card background
-        this.cardBack = new SVGRect(this, -31.5, -44, 63, 88);
+        this.cardBack = new SVGRect(this, -315, -440, 630, 880);
         this.cardBack.setColor("#00ff0040");
-        this.cardBack.setCornerRadius(3);
+        this.cardBack.setCornerRadius(30);
 
         // title
-        this.title = new SVGText(this, "Dina, Soul Steeper", -26, -36, 3.1, 50);
+        this.title = new SVGText(this, "Dina, Soul Steeper", -260, -360, 31, 500);
 
         // type
-        this.type = new SVGText(this, "Legendary Creature – Dryad Druid", -26, 9, 2.6, 50);
+        this.type = new SVGText(this, "Legendary Creature – Dryad Druid", -260, 90, 26, 500);
 
         // description
-        let box = [-26, 12, 52, 28];
+        let box = [-260, 120, 520, 280];
         // this.descriptionRect = new SVGRect(this, ...box);
         // this.descriptionRect.setColor("#ff000040"); // rect for debug
         this.description = new SVGDiv(this, `
-            <p>Whenever you gain life, each opponent loses 1 life.</p>
-            <p>${sym('1')}, Sacrifice another creature: Dina, Soul Steeper gets +X/+0 until end of turn, where X is the sacrificed creature's power.</p>
-            <p class="flavor">Her concoctions corroded metal and fortified organic tissue. They would be studied for generations.</p>
+            <div class="carddesc">
+                <p>Whenever you gain life, each opponent loses 1 life.</p>
+                <p>${sym('1')}, Sacrifice another creature: Dina, Soul Steeper gets +X/+0 until end of turn, where X is the sacrificed creature's power.</p>
+                <p class="flavor">Her concoctions corroded metal and fortified organic tissue. They would be studied for generations.</p>
+            </div>
         `, ...box);
 
         // power/toughness
-        this.stats = new SVGText(this, "1/3", 21, 38, 3.2);
+        this.stats = new SVGText(this, "1/3", 210, 380, 32);
+
+        // card credits
+        this.credit = new SVGDiv(this, `
+            <p class="credit">Hello these are the card credits</p>
+            <p class="credit">This is another line of credits</p>
+        `, -275, 388, 520, 280);
     }
 }

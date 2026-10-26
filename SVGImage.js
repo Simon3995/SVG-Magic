@@ -30,4 +30,8 @@ class SVGImage extends SVGObject {
     setHeight(height) {
         this.shapeElement.setAttribute('height', height);
     }
+
+    setOpacity(opacity) {
+        this.shapeElement.setAttribute('style', `opacity: ${opacity}`);
+    }
 }

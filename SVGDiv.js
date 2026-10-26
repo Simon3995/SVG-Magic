@@ -8,7 +8,6 @@ class SVGDiv extends SVGObject {
 
         this.divElement = document.createElementNS('http://www.w3.org/1999/xhtml', 'div');
         this.divElement.innerHTML = content;
-        this.divElement.setAttribute('class', "carddesc")
         this.shapeElement.appendChild(this.divElement);
 
         this.groupElement.appendChild(this.shapeElement);

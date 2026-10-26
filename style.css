@@ -1,7 +1,8 @@
 * {
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow: visible;
+    font-family: MagicEmoji, serif;
 }
 
 #canvas {
@@ -14,18 +15,23 @@
 }
 
 .carddesc {
-    font-size: 2.4px;
-    font-family: MagicEmoji, serif;
-    line-height: 2.5px;
+    font-size: 24px;
+    line-height: 25px;
 }
 
 .carddesc p {
-    margin-bottom: 1.6px;
+    margin-bottom: 16px;
 }
 
 .flavor {
     color: #555;
     font-style: italic;
+}
+
+.credit {
+    font-size: 14px;
+    line-height: 18px;
+    color: #666
 }
 
 @font-face {
