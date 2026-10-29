@@ -1,6 +1,6 @@
-import { SVGObject } from './SVGObject';
+import SVGObject from './SVGObject';
 
-export class SVGRect extends SVGObject {
+export default class SVGRect extends SVGObject {
     protected readonly shapeElement: SVGRectElement;
     
     constructor(parent: SVGElement, x: number, y: number, width: number, height: number) {

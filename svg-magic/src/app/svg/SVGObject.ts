@@ -1,6 +1,6 @@
 import { Transform } from "../util/types";
 
-export class SVGObject {
+export default class SVGObject {
     protected readonly parent: SVGElement; // any svg element
     protected readonly groupElement: SVGGElement; // svg <g> element
     protected readonly transform: Transform;
