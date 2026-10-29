@@ -10,6 +10,6 @@ import { RouterOutlet } from '@angular/router';
 export class App {
   protected readonly title = signal('svg-magic');
 
-  protected readonly name = "Bingus";
-  protected readonly game = "Flingus"
+  protected readonly name = "Bongus";
+  protected readonly game = "Flongus"
 }
