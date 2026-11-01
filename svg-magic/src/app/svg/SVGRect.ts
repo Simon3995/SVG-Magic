@@ -1,4 +1,4 @@
-import SVGObject from './SVGObject';
+import SVGObject from "./SVGObject";
 
 export default class SVGRect extends SVGObject {
     protected readonly rectElement: SVGRectElement;
