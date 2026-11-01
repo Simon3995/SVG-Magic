@@ -13,37 +13,37 @@ export default class SVGObject {
         this.applyTransform();
     }
 
-    move(x: number, y: number) {
+    move(x: number, y: number): void {
         this.transform.translate.x += x;
         this.transform.translate.y += y;
         this.applyTransform();
     }
 
-    setPosition(x: number, y: number) {
+    setPosition(x: number, y: number): void {
         this.transform.translate.x = x;
         this.transform.translate.y = y;
         this.applyTransform();
     }
 
-    rotate(angle: number) {
+    rotate(angle: number): void {
         this.transform.rotate += angle;
         this.transform.rotate %= 360;
         this.applyTransform();
     }
 
-    setRotation(angle: number) {
+    setRotation(angle: number): void {
         this.transform.rotate = angle;
         this.transform.rotate %= 360;
         this.applyTransform();
     }
 
-    delete() {
+    delete(): void {
         if (this.groupElement && this.groupElement.parentNode) {
             this.groupElement.parentNode.removeChild(this.groupElement);
         }
     }
 
-    applyTransform() {
+    applyTransform(): void {
         const { x, y } = this.transform.translate;
         const angle = this.transform.rotate;
         const transformAttr = `translate(${x}, ${y}) rotate(${angle})`;
