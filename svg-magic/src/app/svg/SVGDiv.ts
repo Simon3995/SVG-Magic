@@ -2,7 +2,7 @@ import SVGObject from "./SVGObject";
 
 export default class SVGDiv extends SVGObject {
     protected readonly foreignObjectElement: SVGForeignObjectElement;
-    protected readonly divElement: HTMLElement;
+    protected readonly divElement: HTMLDivElement;
     
     constructor(parent: SVGElement, content: string, x: number, y: number, width: number, height: number) {
         super(parent, x, y);
@@ -11,7 +11,7 @@ export default class SVGDiv extends SVGObject {
         this.foreignObjectElement.setAttribute('width', width.toString());
         this.foreignObjectElement.setAttribute('height', height.toString());
 
-        this.divElement = document.createElementNS('http://www.w3.org/1999/xhtml', 'div');
+        this.divElement = document.createElementNS('http://www.w3.org/1999/xhtml', 'div') as HTMLDivElement;
         this.divElement.innerHTML = content;
         this.foreignObjectElement.appendChild(this.divElement);
 
