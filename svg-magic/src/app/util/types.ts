@@ -7,3 +7,5 @@ export interface Transform {
     translate: Vec2;
     rotate: number;
 }
+
+export type Rect = [number, number, number, number];
