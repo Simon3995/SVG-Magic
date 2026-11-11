@@ -20,7 +20,7 @@ export default class SVGMagicCreatureCard extends SVGMagicCard {
         super(parent, x, y);
         
         // reference image
-        this.background = new SVGImage(this.groupElement, "./assets/dina_soul_steeper.jpg", -315, -440, 630, 880);
+        this.background = new SVGImage(this.groupElement, "/assets/dina_soul_steeper.jpg", -315, -440, 630, 880);
         this.background.setOpacity(0.4);
 
         // TODO: check whether SVGDiv is compatible with all browsers
