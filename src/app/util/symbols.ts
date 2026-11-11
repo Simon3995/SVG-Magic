@@ -1,4 +1,7 @@
-function sym(name) {
+// input: shorthand code for one symbol
+// output: unicode encoding of the symbol
+// requires the MagicEmoji font to render
+export function sym(name: string): string {
     switch (name.toLowerCase()) {
         case "w": return '\u{1fc00}'; // white mana
         case "u": return '\u{1fc01}'; // blue mana
@@ -69,6 +72,6 @@ function sym(name) {
         case "s": return '\u{1fc42}'; // snow mana
         case "t": return '\u{1fc43}'; // tap
         case "ut": return '\u{1fc44}'; // untap
-        default: return null; // no value found!
+        default: return ''; // no value found!
     }
 }

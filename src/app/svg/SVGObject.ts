@@ -1,43 +1,49 @@
-class SVGObject {
-    constructor(svgElement, x = 0, y = 0) {
-        this.svgElement = svgElement?.groupElement || svgElement;
+import { Transform } from "../util/types";
+
+export default class SVGObject {
+    protected readonly parent: SVGElement; // any svg element
+    protected readonly groupElement: SVGGElement; // svg <g> element
+    protected readonly transform: Transform;
+    
+    constructor(parent: SVGElement, x = 0, y = 0) {
+        this.parent = parent;
         this.transform = { translate: { x:x, y:y }, rotate: 0 };
         this.groupElement = document.createElementNS("http://www.w3.org/2000/svg", "g");
-        this.svgElement.appendChild(this.groupElement);
+        this.parent.appendChild(this.groupElement);
         this.applyTransform();
     }
 
-    move(x, y) {
+    move(x: number, y: number): void {
         this.transform.translate.x += x;
         this.transform.translate.y += y;
         this.applyTransform();
     }
 
-    setPosition(x, y) {
+    setPosition(x: number, y: number): void {
         this.transform.translate.x = x;
         this.transform.translate.y = y;
         this.applyTransform();
     }
 
-    rotate(angle) {
+    rotate(angle: number): void {
         this.transform.rotate += angle;
         this.transform.rotate %= 360;
         this.applyTransform();
     }
 
-    setRotation(angle) {
+    setRotation(angle: number): void {
         this.transform.rotate = angle;
         this.transform.rotate %= 360;
         this.applyTransform();
     }
 
-    delete() {
+    delete(): void {
         if (this.groupElement && this.groupElement.parentNode) {
             this.groupElement.parentNode.removeChild(this.groupElement);
         }
     }
 
-    applyTransform() {
+    applyTransform(): void {
         const { x, y } = this.transform.translate;
         const angle = this.transform.rotate;
         const transformAttr = `translate(${x}, ${y}) rotate(${angle})`;
