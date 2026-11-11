@@ -11,7 +11,7 @@ export default class SVGDiv extends SVGObject {
         this.foreignObjectElement.setAttribute('width', width.toString());
         this.foreignObjectElement.setAttribute('height', height.toString());
 
-        this.divElement = document.createElementNS('http://www.w3.org/1999/xhtml', 'div') as HTMLDivElement;
+        this.divElement = document.createElement('div');
         this.divElement.innerHTML = content;
         this.foreignObjectElement.appendChild(this.divElement);
 
